@@ -1,4 +1,4 @@
-﻿/// <reference path="jquery-1.6.2-vsdoc.js" />
+﻿/// <reference path="jquery/jquery-1.6.2-vsdoc.js" />
 
 function GitHub() { }
 

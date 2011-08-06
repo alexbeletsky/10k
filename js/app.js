@@ -1,4 +1,4 @@
-﻿/// <reference path="jquery-1.6.2-vsdoc.js" />
+﻿/// <reference path="jquery/jquery-1.6.2-vsdoc.js" />
 /// <reference path="github.js" />
 /// <reference path="bages.js" />
 /// <reference path="info.js" />
@@ -7,7 +7,6 @@ $(function () {
     //badgesTests();
     //infoTests();
     //githubTests();
-
     // Application code
 });
 
