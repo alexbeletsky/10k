@@ -5,8 +5,21 @@
 
 $(function () {
     //badgesTests();
-    infoTests();
+    //infoTests();
+    //githubTests();
+
+    // Application code
 });
+
+function githubTests() {
+    var github = new GitHub();
+
+    var callback = function (d) {
+        //alert(d);
+    }
+
+    github.init('rstacruz', callback);
+}
 
 function infoTests() {
     var info = new Info();
@@ -15,21 +28,21 @@ function infoTests() {
         alert(d);
     }
 
-    info.collect('alexanderbeletsky', callback);
+    info.collect('rstacruz', callback);
 }
 
 function badgesTests() {
     var info = {};
     var context = {};
 
-    info.repositories = 17;
-    info.watchedRepositories = 700;
-    info.following = 522;
-    info.followed = 15;
-    info.forked = 4;
-    info.watched = 12;
-    info.issues = 40;
-    info.gists = 100;
+    info.repositories = 17;             //DONE
+    info.watchedRepositories = 700;     //DONE
+    info.following = 522;               //DONE
+    info.followed = 15;                 //DONE
+    info.forked = 4;                    //DONE
+    info.watchers = 12;                 //DONE
+    info.issues = 40;                   //DONE             
+    info.gists = 100;                   //DONE
     context.bages = [];
 
     var watcher = new Watcher();

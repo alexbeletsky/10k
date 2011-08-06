@@ -158,16 +158,16 @@ Creator.prototype = (function () {
             var criteria = new Criteria();
             var options = [];
 
-            var format = function (watched) {
-                return 'Some repository watched by ' + watched + ' developers';
+            var format = function (watchers) {
+                return 'Some repository watched by ' + watchers + ' developers';
             }
 
             options.badge = 'Creator';
 
-            options['wood'] = { propertyName: 'watched', low: 2, high: 10, format: format };
-            options['bronze'] = { propertyName: 'watched', low: 10, high: 100, format: format };
-            options['silver'] = { propertyName: 'watched', low: 100, high: 1000, format: format };
-            options['gold'] = { propertyName: 'watched', low: 1000, format: format };
+            options['wood'] = { propertyName: 'watchers', low: 2, high: 10, format: format };
+            options['bronze'] = { propertyName: 'watchers', low: 10, high: 100, format: format };
+            options['silver'] = { propertyName: 'watchers', low: 100, high: 1000, format: format };
+            options['gold'] = { propertyName: 'watchers', low: 1000, format: format };
 
             criteria.applyForBadge(info, context, options);
         }
