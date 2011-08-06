@@ -1,12 +1,28 @@
 ﻿/// <reference path="jquery-1.6.2-vsdoc.js" />
 /// <reference path="github.js" />
 /// <reference path="bages.js" />
+/// <reference path="info.js" />
 
 $(function () {
+    //badgesTests();
+    infoTests();
+});
 
+function infoTests() {
+    var info = new Info();
+
+    var callback = function (d) {
+        alert(d);
+    }
+
+    info.collect('alexanderbeletsky', callback);
+}
+
+function badgesTests() {
     var info = {};
     var context = {};
 
+    info.repositories = 17;
     info.watchedRepositories = 700;
     info.following = 522;
     info.followed = 15;
@@ -36,6 +52,10 @@ $(function () {
     creator.applyForBadge(info, context);
     $('.debug').append('<p>Creator ' + context.bages['Creator'].type + ' ' + context.bages['Creator'].info + '</p>');
 
+    var coder = new Coder();
+    coder.applyForBadge(info, context);
+    $('.debug').append('<p>Coder ' + context.bages['Coder'].type + ' ' + context.bages['Coder'].info + '</p>');
+
     var bureaucrat = new Bureaucrat();
     bureaucrat.applyForBadge(info, context);
     $('.debug').append('<p>Bureaucrat ' + context.bages['Bureaucrat'].type + ' ' + context.bages['Bureaucrat'].info + '</p>');
@@ -43,7 +63,4 @@ $(function () {
     var writer = new Writer();
     writer.applyForBadge(info, context);
     $('.debug').append('<p>Writer ' + context.bages['Writer'].type + ' ' + context.bages['Writer'].info + '</p>');
-
-    Writer
-
-});
+}

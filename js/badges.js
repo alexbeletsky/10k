@@ -174,6 +174,31 @@ Creator.prototype = (function () {
     }
 })();
 
+function Coder() { }
+
+Coder.prototype = (function () {
+    return {
+        applyForBadge: function (info, context) {
+            var criteria = new Criteria();
+            var options = [];
+
+            var format = function (repositories) {
+                return 'Have created ' + repositories + ' repositories';
+            }
+
+            options.badge = 'Coder';
+
+            options['wood'] = { propertyName: 'repositories', low: 1, high: 10, format: format };
+            options['bronze'] = { propertyName: 'repositories', low: 10, high: 30, format: format };
+            options['silver'] = { propertyName: 'repositories', low: 30, high: 50, format: format };
+            options['gold'] = { propertyName: 'repositories', low: 50, format: format };
+
+            criteria.applyForBadge(info, context, options);
+        }
+    }
+})();
+
+
 function Bureaucrat() { }
 
 Bureaucrat.prototype = (function () {

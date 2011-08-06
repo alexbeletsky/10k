@@ -29,6 +29,12 @@ Creator:
 	(silver) Have a repository with 100 watcher
 	(gold) Have a repository with 1000 watcher
 
+Coder:
+	(wood) Have at least 1 repository
+	(bronze) Have more than 10 repositories
+	(silver) Have more than 100 repositories
+	(gold) Have more than 500 repositories
+
 Bureaucrat:
 	(wood) Have a repository with at least 1 issue
 	(bronze) Have a repository with 10 issues

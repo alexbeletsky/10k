@@ -38,6 +38,12 @@ Idea is ranking Github users by assigning them different kinds of badges, based 
 		(silver) Have a repository with 100 watcher
 		(gold) Have a repository with 1000 watcher
 
+	Coder:
+		(wood) Have at least 1 repository
+		(bronze) Have more than 10 repositories
+		(silver) Have more than 30 repositories
+		(gold) Have more than 50 repositories
+
 	Bureaucrat:
 		(wood) Have a repository with at least 1 issue
 		(bronze) Have a repository with 10 issues
