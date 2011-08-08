@@ -4,6 +4,27 @@
 /// <reference path="info.js" />
 
 $(function () {
+
+    $('#github-account').live('keyup', function (event) {
+        if (event.keyCode == 13) {
+            setTimeout(loadBadges(), 200);
+        }
+
+        event.preventDefault();
+    });
+
+    function loadBadges() {
+        hideInput(startProgress);
+    }
+
+    function startProgress() {
+        $('#loading').show();
+    }
+
+    function hideInput(callback) {
+        $('#github-account').fadeOut('slow', callback);
+    }
+
     //badgesTests();
     //infoTests();
     //githubTests();
