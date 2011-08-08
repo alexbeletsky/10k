@@ -14,8 +14,51 @@ header .octocat { display: inline; position: relative; background: url(../img/oc
 #github-account { width: 60%; font-size: 20px; padding: .5em .5em; position: relative; top: 155px; border: 1px solid #003140; outline: 10px solid rgba(89, 116, 125, 0.6);  }
 a { color: #2ea0c9 }
 .badges { padding-top: 80px; padding-bottom: 80px; position: relative; display: block; height: auto; overflow: auto; } 
-.badge { display:inline-block; float: left; width: 160px; height: 200px; background: black; margin-left: 12px; margin-bottom: 9px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+.badge { display:inline-block; float: left; width: 250px; height: 140px; opacity: 0.8; margin-left: 22px; margin-bottom: 22px; }
 
 
+.top {  display: block; height: 20%; width: 100%; 
+        -moz-border-radius-topleft: 10px;
+-moz-border-radius-topright: 10px;
+-moz-border-radius-bottomright: 0px;
+-moz-border-radius-bottomleft: 0px;
+-webkit-border-radius: 10px 10px 0px 0px;
+border-radius: 10px 10px 0px 0px;
+-webkit-box-shadow: 1px 3px 5px 2px #b3b3b3;
+-moz-box-shadow: 1px 3px 5px 2px #b3b3b3;
+box-shadow: 1px 3px 5px 2px #b3b3b3;
+        
+        }
+.body  
+{
+display: block;
+height: 80%; width: 100%;    
+-moz-border-radius-topleft: 0px;
+-moz-border-radius-topright: 0px;
+-moz-border-radius-bottomright: 10px;
+-moz-border-radius-bottomleft: 10px;
+-webkit-border-radius: 0px 0px 10px 10px;
+border-radius: 0px 0px 10px 10px;
+
+background: #82bbcf; /* Old browsers */
+background: -moz-linear-gradient(top, #82bbcf 0%, #6d9dad 99%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#82bbcf), color-stop(99%,#6d9dad)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #82bbcf 0%,#6d9dad 99%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #82bbcf 0%,#6d9dad 99%); /* Opera11.10+ */
+background: -ms-linear-gradient(top, #82bbcf 0%,#6d9dad 99%); /* IE10+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#82bbcf', endColorstr='#6d9dad',GradientType=0 ); /* IE6-9 */
+background: linear-gradient(top, #82bbcf 0%,#6d9dad 99%); /* W3C */
+
+
+background: linear-gradient(top, #96d5eb 0%,#82bbcf 99%); /* W3C */
+-webkit-box-shadow: 1px 3px 5px 2px #b3b3b3;
+-moz-box-shadow: 1px 3px 5px 2px #b3b3b3;
+box-shadow: 1px 3px 5px 2px #b3b3b3;
+}
+
+.gold { background: #ffcc00; }
+.silver { background: #c7c7c7 }
+.bronze { background: #b5621f }
+.wood { background: #4f3f34; }
 footer { clear: both; }
 footer p { font-family: 'Open Sans Condensed', sans-serif; }
