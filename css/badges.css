@@ -2,12 +2,15 @@
 body { background: #d7edf5 url(../img/back.png) repeat; color: #006587; font: 15px/1.75 sans-serif; overflow-y: scroll; padding-bottom: 3em; text-align: center; }
 #container { width: 70%; margin: 0 auto; max-width: 1280px; position: relative; }
 .border { height: 8px; background: #004d69; -webkit-box-shadow: 0px 3px 10px 1px #a8e1f7; -moz-box-shadow: 0px 3px 10px 1px #a8e1f7; box-shadow: 0px 3px 10px 1px #a8e1f7;}
-header { display: block; margin-top: 26px;  }
+header { display: block; padding-top: 26px; }
 header h1 { display: block; font-family: 'Anton', sans-serif; font-size: 43px; text-align: left; float: left; }
 header h1 a { color: #004d69; text-decoration: none }
 header .octocat { display: inline; position: relative; background: url(../img/octocat.png); height: 64px; width: 64px; margin-top: 8px; opacity: 0.6; float: right; }
-.clear { clear: "both" }
-#main {  }
+#main { clear: both; display: block; margin: 0 auto; padding: 10px 0px 10px 0px;  }
+#box { background: #007399; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; opacity: 0.4;  min-height: 410px; margin: 3em; border: 1px solid #003140; }
+.default-shadow { -webkit-box-shadow: 1px 1px 15px 4px #003140; -moz-box-shadow: 1px 1px 15px 4px #003140; box-shadow: 1px 1px 15px 4px #003140; }
+#main p { font-size: x-large }
+#github-account { width: 60%; font-size: 20px; padding: .5em .5em; position: relative; top: 155px; border: 1px solid #003140; outline: 10px solid rgba(0, 40, 50, 0.6);  }
 a { color: #2ea0c9 }
-footer { clear: both; margin-top: 26px; }
+footer { clear: both; }
 footer p { font-family: 'Open Sans Condensed', sans-serif; }
