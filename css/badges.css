@@ -8,10 +8,14 @@ header h1 { display: block; font-family: 'Anton', sans-serif; font-size: 43px; t
 header h1 a { display: inline; color: #004d69; text-decoration: none }
 header .octocat { display: inline; position: relative; background: url(../img/octocat.png); height: 64px; width: 64px; margin-top: 8px; opacity: 0.6; float: right; }
 #main { clear: both; display: block; margin: 0 auto; padding: 10px 0px 10px 0px;  }
-#box { background: #007399; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; opacity: 0.4;  min-height: 410px; margin: 3em; border: 1px solid #003140; }
-.default-shadow { -webkit-box-shadow: 1px 1px 15px 4px #003140; -moz-box-shadow: 1px 1px 15px 4px #003140; box-shadow: 1px 1px 15px 4px #003140; }
+#box { display: block; position: relative; background: #82bbcf; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; opacity: 0.7; min-height: 390px; height: auto; overflow: auto; margin: 3em; border: 1px solid #80a0ab; }
+.default-shadow { -webkit-box-shadow: 1px 1px 15px 4px #73868c; -moz-box-shadow: 1px 1px 15px 4px #73868c; box-shadow: 1px 1px 15px 4px #73868c; }
 #main p { font-size: x-large }
-#github-account { width: 60%; font-size: 20px; padding: .5em .5em; position: relative; top: 155px; border: 1px solid #003140; outline: 10px solid rgba(0, 40, 50, 0.6);  }
+#github-account { width: 60%; font-size: 20px; padding: .5em .5em; position: relative; top: 155px; border: 1px solid #003140; outline: 10px solid rgba(89, 116, 125, 0.6);  }
 a { color: #2ea0c9 }
+.badges { padding-top: 80px; padding-bottom: 80px; position: relative; display: block; height: auto; overflow: auto; } 
+.badge { display:inline-block; float: left; width: 160px; height: 200px; background: black; margin-left: 12px; margin-bottom: 9px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+
+
 footer { clear: both; }
 footer p { font-family: 'Open Sans Condensed', sans-serif; }
