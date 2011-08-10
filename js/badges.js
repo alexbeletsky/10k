@@ -9,7 +9,7 @@ Criteria.prototype = (function () {
         }
 
         if (value >= low && value < high) {
-            context.bages[badge] = { type: type, info: format(value) }
+            context.badges.push({ name: badge, type: type, info: format(value) });
             return true;
         }
 

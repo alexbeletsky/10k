@@ -5,11 +5,14 @@
 
 $(function () {
 
+    var badges = [new Watcher(), new Follower(), new Celebrity(), new Contributor(), new Creator(), new Coder(), new Bureaucrat(), new Writer()];
+
+    //$('.badges').hide();
+
     $('#github-account').live('keyup', function (event) {
-        if (event.keyCode == 13) {
+        if ($(this).val() != '' && event.keyCode == 13) {
             setTimeout(loadBadges(), 200);
         }
-
         event.preventDefault();
     });
 
@@ -17,12 +20,39 @@ $(function () {
         hideInput(startProgress);
     }
 
-    function startProgress() {
-        $('#loading').show();
+    function hideInput(callback) {
+        $('#box').fadeOut('slow', callback);
     }
 
-    function hideInput(callback) {
-        $('#github-account').fadeOut('slow', callback);
+    function startProgress() {
+        $('#loading').show();
+
+        var github = new GitHub();
+        var callback = function (d) {
+            var context = { badges: [] };
+            $.each(badges, function (i, badge) {
+                badge.applyForBadge(d, context);
+            });
+
+            var showNextBadge = function (current) {
+                if (current == context.badges.length) {
+                    return;
+                }
+
+                var badge = context.badges[current];
+                var $badge = $('<div class="badge"><div class="body ' + badge.type + '-outline"><h2>' + badge.name + '</h2><p>' + badge.info + '</p></div></div>');
+                $badge.hide();
+                $('.badges').append($badge);
+
+                $badge.fadeIn('slow', function () { showNextBadge(++current) });
+            }
+
+            showNextBadge(0);
+
+            $('#loading').hide();
+        }
+
+        github.init($('#github-account').val(), callback);
     }
 
     //badgesTests();
