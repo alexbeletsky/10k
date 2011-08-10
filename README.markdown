@@ -2,6 +2,10 @@
 
 This my application I'm creating to participate [10k Appart](http://10k.aneventapart.com/) competition. The goal is to create application total size would not be more that 10K.
 
+## Enter page
+
+(https://github.com/alexanderbeletsky/10k/blob/master/screens/localhost%20screen%20capture%202011-8-8-20-12-8.png)
+
 ## Idea
 
 Idea is ranking Github users by assigning them different kinds of badges, based on accomplishments
