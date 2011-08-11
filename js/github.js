@@ -5,14 +5,18 @@ function GitHub() { }
 GitHub.prototype = (function () {
     var api = 'http://github.com/api/v2/json/';
 
-    var withJsonp = function (url) {
-        return url + '?callback=?';
-    }
-
-    var callApi = function (m, callback) {
-        var url = withJsonp(api + m);
-        $.getJSON(url, function (r) {
-            callback(r)
+    var callApi = function (m, error, callback) {
+        $.ajax({
+            url: api + m,
+            dataType: "jsonp",
+            jsonpCallback: "jsoncallback",
+            timeout: 5000,
+            success: function (r) {
+                callback(r);
+            },
+            error: function (x, t, e) {
+                error(x, t, e);                
+            },
         });
     }
 
@@ -55,11 +59,10 @@ GitHub.prototype = (function () {
     }
 
     return {
-        init: function (user, callback) {
+        init: function (user, callback, error) {
             var info = {};
-
             // get user information
-            callApi('user/show/' + user, function (r) {
+            callApi('user/show/' + user, error, function (r) {
 
                 info.name = r.user.name;
                 info.gravatar = r.user.gravatar_id;
@@ -67,14 +70,12 @@ GitHub.prototype = (function () {
                 info.gists = r.user.public_gist_count;
                 info.following = r.user.following_count;
                 info.followed = r.user.followers_count;
-
                 // get watched repos information
-                callApi('repos/watched/' + user, function (r) {
+                callApi('repos/watched/' + user, error, function (r) {
 
                     info.watchedRepositories = r.repositories.length;
-
                     // get repositories information
-                    callApi('repos/show/' + user, function (r) {
+                    callApi('repos/show/' + user, error, function (r) {
 
                         info.forked = getForkedCount(r.repositories);
                         info.issues = getMaxIssuesCount(r.repositories);

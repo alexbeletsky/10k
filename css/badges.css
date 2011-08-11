@@ -32,5 +32,6 @@ a { color: #2ea0c9 }
 .wood { background: #4f3f34; }
 .badge h2 { font-size: 24px; font-family: 'Open Sans Condensed', sans-serif; text-shadow: 0px 2px 2px #737373; }
 .badge p { display: block; position:relative; height: auto; padding: 4px; top: 20px;  font-size: 22px !important; font-family: 'Open Sans Condensed', sans-serif; text-align: center; color: #323642; line-height: 20px; }
+.badges p.error { font-size: 28px !important; color: #323642; }
 footer { clear: both; }
 footer p { font-family: 'Open Sans Condensed', sans-serif; }
