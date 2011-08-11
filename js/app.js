@@ -28,7 +28,7 @@ $(function () {
                 if (current == context.badges.length) {
 
                     if (current == 0) {
-                        $('.badges').append('<span class="info">Your github activity is very low. You earned nothing, keep up good work!</span>');                        
+                        $('.badges').append('<span class="info">Your github activity is very low. You earned nothing, keep up good work!</span>');
                     }
 
                     return;
@@ -40,6 +40,7 @@ $(function () {
                 $badge.fadeIn('slow', function () { showNextBadge(++current) });
             }
 
+            $('.badges').show();
             showNextBadge(0);
         }
 
@@ -52,7 +53,7 @@ $(function () {
         github.init(account, callback, error);
     }
 
-    $('.badges').empty();
+    $('.badges').hide().empty();
 
     $('button.submit').bind('click', function () {
         var account = $('#github-account').val();
