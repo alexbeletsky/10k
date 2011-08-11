@@ -12,7 +12,8 @@ header .octocat { display: inline; position: relative; background: url(../img/oc
 #box { display: block; position: relative; height: 100%; width: 95%; margin: 0 auto; background: #82bbcf; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; opacity: 0.7;  border: 1px solid #80a0ab; }
 .default-shadow { -webkit-box-shadow: 1px 1px 15px 4px #73868c; -moz-box-shadow: 1px 1px 15px 4px #73868c; box-shadow: 1px 1px 15px 4px #73868c; }
 #main p { font-size: x-large }
-#github-account { width: 60%; font-size: 20px; padding: .5em .5em; position: relative; top: 155px; border: 1px solid #003140; outline: 10px solid rgba(89, 116, 125, 0.6);  }
+#github-account { width: 50%; font-size: 20px; padding: .5em .5em; position: relative; top: 152px; border: 1px solid #003140; outline: 10px solid rgba(89, 116, 125, 0.6);  }
+button.submit { width: 120px; height: 46px; position: relative; top: 152px; left: 10px; }
 a { color: #2ea0c9 }
 .badges { padding-top: 60px; padding-bottom: 60px; position: relative; display: block; height: auto; overflow: auto; padding: 1em; } 
 .badge { display:inline-block; float: left; width: 240px; height: 140px; opacity: 0.8; margin-left: 6px; margin-bottom: 22px; }

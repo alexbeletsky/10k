@@ -8,9 +8,15 @@ $(function () {
 
     $('.badges').empty();
 
+    $('button.submit').bind('click', function () {
+        var account = $('#github-account').val();
+        setTimeout(startProgress(account), 200);
+        event.preventDefault();        
+    });
+
     $('#github-account').live('keyup', function (event) {
-        if ($(this).val() != '' && event.keyCode == 13) {
-            var account = $('#github-account').val();
+        var account = $('#github-account').val();
+        if (account != '' && event.keyCode == 13) {
             setTimeout(startProgress(account), 200);
         }
         event.preventDefault();
