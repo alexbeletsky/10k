@@ -1,48 +1,48 @@
 ﻿
 Watcher:
-	(wood) Watch at least one repository	
-	(bronze) Watcher more than 10
+	(wood) Watch at least 5 repository	
+	(bronze) Watcher more than 50
 	(silver) Watcher more than 100
 	(gold) Watcher more than 500
 
 Follower:
-	(wood) Follow at least one person
+	(wood) Follow at least 5 person
 	(bronze) Follow more than 10 people
-	(silver) Follow more than 100 people
-	(gold) Follow more than 500 people
+	(silver) Follow more than 50 people
+	(gold) Follow more than 100 people
 
 Celebrity:
-	(wood) Followed by at least one person
+	(wood) Followed by at least 5 person
 	(bronze) Followed by more than 10 persons
 	(silver) Followed by more than 100 persons
 	(gold) Followed by more than 500 persons
 
 Contributor:
-	(wood) Forked at least one repository
-	(bronze) Forked 5 repositories
-	(silver) Forked 10 repositories
-	(gold) Forked 20 repositories
+	(wood) Forked at least 5 repository
+	(bronze) Forked 10 repositories
+	(silver) Forked 20 repositories
+	(gold) Forked 30 repositories
 
 Creator:
-	(wood) Have a repository with at least 2 watchers
+	(wood) Have a repository with at least 5 watchers
 	(bronze) Have a repository with 10 watcher
 	(silver) Have a repository with 100 watcher
 	(gold) Have a repository with 1000 watcher
 
 Coder:
-	(wood) Have at least 1 repository
+	(wood) Have at least 5 repository
 	(bronze) Have more than 10 repositories
-	(silver) Have more than 100 repositories
-	(gold) Have more than 500 repositories
+	(silver) Have more than 50 repositories
+	(gold) Have more than 100 repositories
 
 Bureaucrat:
-	(wood) Have a repository with at least 1 issue
+	(wood) Have a repository with at least 5 issue
 	(bronze) Have a repository with 10 issues
 	(silver) Have a repository with 100 issues
 	(gold) Have a repository with 1000 issues
 
 Writer:
-	(wood) Have at least one gist
-	(bronze) Have 10 gists
+	(wood) Have at least 10 gist
+	(bronze) Have 50 gists
 	(silver) Have more 100 gists
 	(gold) Have more 1000 gists

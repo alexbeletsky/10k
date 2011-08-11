@@ -26,9 +26,9 @@ Criteria.prototype = (function () {
         return { badge: options.badge, value: propertyValue, format: format, low: low, high: high };
     }
 
-    var wood = function (info, context, options) {
-        var input = init('wood', info, options);
-        return criteria(input.badge, 'wood', input.value, context, input.format, input.low, input.high);
+    var wooden = function (info, context, options) {
+        var input = init('wooden', info, options);
+        return criteria(input.badge, 'wooden', input.value, context, input.format, input.low, input.high);
     }
 
     var bronze = function (info, context, options) {
@@ -41,14 +41,14 @@ Criteria.prototype = (function () {
         return criteria(input.badge, 'silver', input.value, context, input.format, input.low, input.high);
     }
 
-    var gold = function (info, context, options) {
-        var input = init('gold', info, options);
-        return criteria(input.badge, 'gold', input.value, context, input.format, input.low, input.high);
+    var golden = function (info, context, options) {
+        var input = init('golden', info, options);
+        return criteria(input.badge, 'golden', input.value, context, input.format, input.low, input.high);
     }
 
     return {
         applyForBadge: function (info, context, options) {
-            $.each([gold, silver, bronze, wood], function (i, matcher) {
+            $.each([golden, silver, bronze, wooden], function (i, matcher) {
                 return !matcher(info, context, options);
             });
         }
@@ -68,10 +68,10 @@ Watcher.prototype = (function () {
             }
 
             options.badge = 'Watcher';
-            options['wood'] = { propertyName: 'watchedRepositories', low: 1, high: 10, format: format };
-            options['bronze'] = { propertyName: 'watchedRepositories', low: 10, high: 100, format: format };
+            options['wooden'] = { propertyName: 'watchedRepositories', low: 5, high: 50, format: format };
+            options['bronze'] = { propertyName: 'watchedRepositories', low: 50, high: 100, format: format };
             options['silver'] = { propertyName: 'watchedRepositories', low: 100, high: 500, format: format };
-            options['gold'] = { propertyName: 'watchedRepositories', low: 500, format: format };
+            options['golden'] = { propertyName: 'watchedRepositories', low: 500, format: format };
 
             criteria.applyForBadge(info, context, options);
         }
@@ -92,10 +92,10 @@ Follower.prototype = (function () {
 
             options.badge = 'Follower';
 
-            options['wood'] = { propertyName: 'following', low: 1, high: 10, format: format };
-            options['bronze'] = { propertyName: 'following', low: 10, high: 100, format: format };
-            options['silver'] = { propertyName: 'following', low: 100, high: 500, format: format };
-            options['gold'] = { propertyName: 'following', low: 500, format: format };
+            options['wooden'] = { propertyName: 'following', low: 5, high: 10, format: format };
+            options['bronze'] = { propertyName: 'following', low: 10, high: 50, format: format };
+            options['silver'] = { propertyName: 'following', low: 50, high: 100, format: format };
+            options['golden'] = { propertyName: 'following', low: 100, format: format };
 
             criteria.applyForBadge(info, context, options);
         }
@@ -116,10 +116,10 @@ Celebrity.prototype = (function () {
 
             options.badge = 'Celebrity';
 
-            options['wood'] = { propertyName: 'followed', low: 1, high: 10, format: format };
+            options['wooden'] = { propertyName: 'followed', low: 5, high: 10, format: format };
             options['bronze'] = { propertyName: 'followed', low: 10, high: 100, format: format };
             options['silver'] = { propertyName: 'followed', low: 100, high: 500, format: format };
-            options['gold'] = { propertyName: 'followed', low: 500, format: format };
+            options['golden'] = { propertyName: 'followed', low: 500, format: format };
 
             criteria.applyForBadge(info, context, options);
         }
@@ -140,10 +140,10 @@ Contributor.prototype = (function () {
 
             options.badge = 'Contributor';
 
-            options['wood'] = { propertyName: 'forked', low: 1, high: 5, format: format };
-            options['bronze'] = { propertyName: 'forked', low: 5, high: 10, format: format };
-            options['silver'] = { propertyName: 'forked', low: 10, high: 20, format: format };
-            options['gold'] = { propertyName: 'forked', low: 20, format: format };
+            options['wooden'] = { propertyName: 'forked', low: 5, high: 10, format: format };
+            options['bronze'] = { propertyName: 'forked', low: 10, high: 20, format: format };
+            options['silver'] = { propertyName: 'forked', low: 20, high: 30, format: format };
+            options['golden'] = { propertyName: 'forked', low: 30, format: format };
 
             criteria.applyForBadge(info, context, options);
         }
@@ -164,10 +164,10 @@ Creator.prototype = (function () {
 
             options.badge = 'Creator';
 
-            options['wood'] = { propertyName: 'watchers', low: 2, high: 10, format: format };
+            options['wooden'] = { propertyName: 'watchers', low: 5, high: 10, format: format };
             options['bronze'] = { propertyName: 'watchers', low: 10, high: 100, format: format };
             options['silver'] = { propertyName: 'watchers', low: 100, high: 1000, format: format };
-            options['gold'] = { propertyName: 'watchers', low: 1000, format: format };
+            options['golden'] = { propertyName: 'watchers', low: 1000, format: format };
 
             criteria.applyForBadge(info, context, options);
         }
@@ -188,10 +188,10 @@ Coder.prototype = (function () {
 
             options.badge = 'Coder';
 
-            options['wood'] = { propertyName: 'repositories', low: 1, high: 10, format: format };
-            options['bronze'] = { propertyName: 'repositories', low: 10, high: 30, format: format };
-            options['silver'] = { propertyName: 'repositories', low: 30, high: 50, format: format };
-            options['gold'] = { propertyName: 'repositories', low: 50, format: format };
+            options['wooden'] = { propertyName: 'repositories', low: 5, high: 10, format: format };
+            options['bronze'] = { propertyName: 'repositories', low: 10, high: 50, format: format };
+            options['silver'] = { propertyName: 'repositories', low: 50, high: 100, format: format };
+            options['golden'] = { propertyName: 'repositories', low: 100, format: format };
 
             criteria.applyForBadge(info, context, options);
         }
@@ -213,10 +213,10 @@ Bureaucrat.prototype = (function () {
 
             options.badge = 'Bureaucrat';
 
-            options['wood'] = { propertyName: 'issues', low: 1, high: 10, format: format };
+            options['wooden'] = { propertyName: 'issues', low: 5, high: 10, format: format };
             options['bronze'] = { propertyName: 'issues', low: 10, high: 100, format: format };
             options['silver'] = { propertyName: 'issues', low: 100, high: 1000, format: format };
-            options['gold'] = { propertyName: 'issues', low: 1000, format: format };
+            options['golden'] = { propertyName: 'issues', low: 1000, format: format };
 
             criteria.applyForBadge(info, context, options);
         }
@@ -237,10 +237,10 @@ Writer.prototype = (function () {
 
             options.badge = 'Writer';
 
-            options['wood'] = { propertyName: 'gists', low: 1, high: 10, format: format };
-            options['bronze'] = { propertyName: 'gists', low: 10, high: 100, format: format };
+            options['wooden'] = { propertyName: 'gists', low: 10, high: 50, format: format };
+            options['bronze'] = { propertyName: 'gists', low: 50, high: 100, format: format };
             options['silver'] = { propertyName: 'gists', low: 100, high: 1000, format: format };
-            options['gold'] = { propertyName: 'gists', low: 1000, format: format };
+            options['golden'] = { propertyName: 'gists', low: 1000, format: format };
 
             criteria.applyForBadge(info, context, options);
         }

@@ -15,7 +15,7 @@ header .octocat { display: inline; position: relative; background: url(../img/oc
 #github-account { width: 50%; font-size: 20px; padding: .5em .5em; position: relative; top: 152px; border: 1px solid #003140; outline: 10px solid rgba(89, 116, 125, 0.6);  }
 button.submit { width: 120px; height: 46px; position: relative; top: 152px; left: 10px; }
 a { color: #2ea0c9 }
-.badges { padding-top: 60px; padding-bottom: 60px; position: relative; display: block; height: auto; overflow: auto; padding: 1em; } 
+.badges { padding-top: 60px; padding-bottom: 60px; position: relative; display: block; height: auto; min-height: 100%; overflow: auto; padding: 1em; } 
 .badge { display:inline-block; float: left; width: 240px; height: 140px; opacity: 0.8; margin-left: 6px; margin-bottom: 22px; }
 .body
 {
@@ -23,16 +23,13 @@ a { color: #2ea0c9 }
     -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
     border: 1px solid #c9c9c9;
 }
-.gold-outline { -webkit-box-shadow: 0px 0px 10px 10px #ffcc00; -moz-box-shadow: 0px 0px 10px 10px #ffcc00; box-shadow: 0px 0px 10px 10px #ffcc00; } 
+.golden-outline { -webkit-box-shadow: 0px 0px 10px 10px #ffcc00; -moz-box-shadow: 0px 0px 10px 10px #ffcc00; box-shadow: 0px 0px 10px 10px #ffcc00; } 
 .silver-outline { -webkit-box-shadow: 0px 0px 10px 10px #c7c7c7; -moz-box-shadow: 0px 0px 10px 10px #c7c7c7; box-shadow: 0px 0px 10px 10px #c7c7c7; } 
 .bronze-outline { -webkit-box-shadow: 0px 0px 10px 10px #b36020; -moz-box-shadow: 0px 0px 10px 10px #b36020; box-shadow: 0px 0px 10px 10px #b36020; } 
-.wood-outline { -webkit-box-shadow: 0px 0px 10px 10px #4f3f34; -moz-box-shadow: 0px 0px 10px 10px #4f3f34; box-shadow: 0px 0px 10px 10px #4f3f34; } 
-.gold { background: #ffcc00; }
-.silver { background: #c7c7c7 }
-.bronze { background: #b5621f }
-.wood { background: #4f3f34; }
+.wooden-outline { -webkit-box-shadow: 0px 0px 10px 10px #4f3f34; -moz-box-shadow: 0px 0px 10px 10px #4f3f34; box-shadow: 0px 0px 10px 10px #4f3f34; } 
 .badge h2 { font-size: 24px; font-family: 'Open Sans Condensed', sans-serif; text-shadow: 0px 2px 2px #737373; }
-.badge p { display: block; position:relative; height: auto; padding: 4px; top: 20px;  font-size: 22px !important; font-family: 'Open Sans Condensed', sans-serif; text-align: center; color: #323642; line-height: 20px; }
-.badges p.error { font-size: 28px !important; color: #323642; }
+.badge p { display: block; position:relative; height: auto; padding: 4px; top: 20px !important;  font-size: 22px !important; font-family: 'Open Sans Condensed', sans-serif; text-align: center; color: #323642; line-height: 20px; }
+.badges span.info { font-size: 32px; position: relative; top: 50px; }
+.badges span.error { font-size: 32px; position: relative; top: 50px; color: #a19191; }
 footer { clear: both; }
 footer p { font-family: 'Open Sans Condensed', sans-serif; }
