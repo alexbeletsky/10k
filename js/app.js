@@ -24,17 +24,32 @@ $(function () {
                 badge.applyForBadge(d, context);
             });
 
+            var summary = {
+                toString: function () {
+                    return 'You have earned: '
+                        + (this['golden'] || 0) + ' golden, ' + (this['silver'] || 0) + ' silver, ' + (this['bronze'] || 0) + ' bronze and ' + (this['wooden'] || 0) + ' wooden badges.';
+                }
+            };
             var showNextBadge = function (current) {
                 if (current == context.badges.length) {
 
                     if (current == 0) {
                         $('.badges').append('<span class="info">Your github activity is very low. You earned nothing, keep up good work!</span>');
+                        return;
                     }
+
+                    var $earnings = $('<span class="earnings">' + summary.toString() + '</span>').hide();
+                    $('.badges').append($earnings);
+                    $earnings.fadeIn('fast');
 
                     return;
                 }
                 var badge = context.badges[current];
-                var $badge = $('<div class="badge"><div title="' + badge.type + ' badge" class="body ' + badge.type + '-outline"><h2>' + badge.name + '</h2><p>' + badge.info + '</p></div></div>').hide();
+                var type = badge.type, name = badge.name, info = badge.info;
+
+                collectSummary(summary, type);
+
+                var $badge = $('<div class="badge"><div title="' + type + ' badge" class="body ' + type + '-outline"><h2>' + name + '</h2><p>' + info + '</p></div></div>').hide();
                 $('.badges').append($badge);
 
                 $badge.fadeIn('slow', function () { showNextBadge(++current) });
@@ -44,8 +59,17 @@ $(function () {
             showNextBadge(0);
         }
 
+        var collectSummary = function (summary, type) {
+            if (summary[type] == undefined) {
+                summary[type] = 0;
+            }
+
+            summary[type]++;
+        }
+
         var error = function () {
             $('#loading').hide();
+            $('.badges').show();
             $('.badges').append('<span class="error">Sorry, but it looks like user with such account does not exists...</span>');
         }
 
@@ -54,6 +78,7 @@ $(function () {
     }
 
     $('.badges').hide().empty();
+    $('.border').css('background', '#004d69');
 
     $('button.submit').bind('click', function () {
         var account = $('#github-account').val();
