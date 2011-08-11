@@ -7,10 +7,6 @@ This my application I'm creating to participate [10k Appart](http://10k.aneventa
 
 Idea is ranking Github users by assigning them different kinds of badges, based on accomplishments
 
-## Enter page
-
-![enter](https://github.com/alexanderbeletsky/10k/raw/master/screens/localhost%20screen%20capture%202011-8-8-20-12-8.png)
-
 ## Badges
 
 	Watcher:
@@ -63,7 +59,7 @@ Idea is ranking Github users by assigning them different kinds of badges, based 
 
 ## Badges page
 
-![badges](https://github.com/alexanderbeletsky/10k/raw/master/screens/screen%20capture%202011-8-10-22-36-41.png)
+![badges](https://github.com/alexanderbeletsky/10k/raw/master/screens/badges.png)
 
 ## Frameworks
 
