@@ -8,14 +8,14 @@ header h1 { display: block; font-family: 'Anton', sans-serif; font-size: 43px; t
 header h1 a { display: inline; color: #004d69; text-decoration: none }
 header .octocat { display: inline; position: relative; background: url(../img/octocat.png); height: 64px; width: 64px; margin-top: 8px; opacity: 0.6; float: right; }
 #main { clear: both; display: block; margin: 0 auto; padding: 10px 0px 10px 0px;  }
-.outer { min-height: 360px; margin: 2em; }
-#box { position: relative; display: block; height: auto; min-height: 360px;  padding: 1em; background: #82bbcf; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; opacity: 0.7;  border: 1px solid #80a0ab; }
+.outer { min-height: 360px; padding: 4em; }
+#box { position: relative; display: block; height: auto; min-height: 360px; background: #82bbcf; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; opacity: 0.7;  border: 1px solid #80a0ab; }
 .default-shadow { -webkit-box-shadow: 1px 1px 15px 4px #73868c; -moz-box-shadow: 1px 1px 15px 4px #73868c; box-shadow: 1px 1px 15px 4px #73868c; }
 #main p { font-size: x-large }
-#github-account { width: 50%; font-size: 20px; padding: .5em .5em; position: relative; top: 152px; border: 1px solid #003140; outline: 10px solid rgba(89, 116, 125, 0.6);  }
-button.submit { width: 120px; height: 46px; position: relative; top: 152px; left: 10px; }
+#github-account { width: 50%; font-size: 20px; padding: .5em .5em; position: relative; top: 146px; border: 1px solid #003140; outline: 10px solid rgba(89, 116, 125, 0.6);  }
+button.submit { width: 120px; height: 46px; position: relative; top: 146px; left: 10px; }
 a { color: #2ea0c9 }
-.badges { position: relative; display: block; height: auto; min-height: 100%; overflow: auto; padding: 1em; } 
+.badges { position: relative; display: block; height: auto; min-height: 360px; } 
 .badge { display:inline-block; float: left; width: 240px; height: 140px; opacity: 0.8; margin-left: 6px; margin-bottom: 22px; }
 .body
 {

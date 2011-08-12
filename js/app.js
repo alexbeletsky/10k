@@ -27,7 +27,7 @@ $(function () {
             var summary = {
                 toString: function () {
                     return 'You have earned: '
-                        + (this['golden'] || 0) + ' golden, ' + (this['silver'] || 0) + ' silver, ' + (this['bronze'] || 0) + ' bronze and ' + (this['wooden'] || 0) + ' wooden badges.';
+                        + (this['golden'] || 0) + ' golden, ' + (this['silver'] || 0) + ' silver, ' + (this['bronze'] || 0) + ' bronze and ' + (this['wooden'] || 0) + ' wooden badges';
                 }
             };
             var showNextBadge = function (current) {
@@ -81,13 +81,15 @@ $(function () {
     $('.border').css('background', '#004d69');
 
     $('button.submit').bind('click', function () {
-        var account = $('#github-account').val();
-        setTimeout(startProgress(account), 200);
+        var account = $('#github-account').val().trim();
+        if (account != '') {
+            setTimeout(startProgress(account), 200);
+        }
         event.preventDefault();
     });
 
     $('#github-account').live('keyup', function (event) {
-        var account = $('#github-account').val();
+        var account = $('#github-account').val().trim();
         if (account != '' && event.keyCode == 13) {
             setTimeout(startProgress(account), 200);
         }
