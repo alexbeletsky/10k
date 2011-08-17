@@ -38,7 +38,10 @@ $(function () {
                         return;
                     }
 
-                    var $earnings = $('<span class="earnings">' + summary.toString() + '</span>').hide();
+                    var summaryText = summary.toString();
+                    var $earnings = $('<span class="earnings">' + summaryText + '</span>').hide();
+                    $earnings.append('<p><a href="http://twitter.com/share" class="twitter-share-button" data-text="' + summaryText + '" data-count="none" data-via="ghbadges" data-related="alexbeletsky">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></p>');
+
                     $('.badges').append($earnings);
                     $earnings.fadeIn('fast');
 
