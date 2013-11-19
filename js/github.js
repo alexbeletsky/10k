@@ -3,7 +3,7 @@
 function GitHub() { }
 
 GitHub.prototype = (function () {
-    var api = 'http://github.com/api/v2/json/';
+    var api = 'https://api.github.com/';
 
     var callApi = function (m, error, callback) {
         $.ajax({
@@ -62,24 +62,25 @@ GitHub.prototype = (function () {
         init: function (user, callback, error) {
             var info = {};
             // get user information
-            callApi('user/show/' + user, error, function (r) {
+            callApi('users/' + user, error, function (r) {
 
-                info.name = r.user.name;
-                info.gravatar = r.user.gravatar_id;
-                info.repositories = r.user.public_repo_count;
-                info.gists = r.user.public_gist_count;
-                info.following = r.user.following_count;
-                info.followed = r.user.followers_count;
+                info.name = r.data.name;
+                info.gravatar = r.data.gravatar_id;
+                info.following = r.data.following;
+                info.followed = r.data.followers;
+
                 // get watched repos information
-                callApi('repos/watched/' + user, error, function (r) {
+                callApi('users/' + user + '/subscriptions', error, function (r) {
 
-                    info.watchedRepositories = r.repositories.length;
+                    info.watchedRepositories = r.data.length;
+
                     // get repositories information
-                    callApi('repos/show/' + user, error, function (r) {
+                    callApi('users/' + user + '/repos', error, function (r) {
 
-                        info.forked = getForkedCount(r.repositories);
-                        info.issues = getMaxIssuesCount(r.repositories);
-                        info.watchers = getMaxWatchers(r.repositories);
+                        info.repositories = r.data.length;
+                        info.forked = getForkedCount(r.data);
+                        info.issues = getMaxIssuesCount(r.data);
+                        info.watchers = getMaxWatchers(r.data);
 
                         callback(info);
                     });

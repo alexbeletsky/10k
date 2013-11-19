@@ -219,8 +219,8 @@ Bureaucrat.prototype = (function () {
             options['golden'] = { propertyName: 'issues', low: 1000, format: format };
 
             criteria.applyForBadge(info, context, options);
-        };
-    }
+        }
+    };
 })();
 
 function Writer() { }
@@ -233,7 +233,7 @@ Writer.prototype = (function () {
 
             var format = function (gists) {
                 return 'Have created ' + gists + ' gists';
-            }
+            };
 
             options.badge = 'Writer';
 
@@ -244,7 +244,7 @@ Writer.prototype = (function () {
 
             criteria.applyForBadge(info, context, options);
         }
-    }
+    };
 })();
 
 
