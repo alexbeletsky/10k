@@ -18,7 +18,7 @@ GitHub.prototype = (function () {
                 error(x, t, e);
             },
         });
-    }
+    };
 
     var getForkedCount = function (repos) {
         var count = 0;
@@ -29,7 +29,7 @@ GitHub.prototype = (function () {
         });
 
         return count;
-    }
+    };
 
     var getMaxIssuesCount = function (repos) {
         var maxIssues = 0;
@@ -42,7 +42,7 @@ GitHub.prototype = (function () {
         });
 
         return maxIssues;
-    }
+    };
 
     var getMaxWatchers = function (repos) {
         var maxWatchers = 0;
@@ -56,7 +56,7 @@ GitHub.prototype = (function () {
         });
 
         return maxWatchers;
-    }
+    };
 
     return {
         init: function (user, callback, error) {

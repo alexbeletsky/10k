@@ -1,9 +1,4 @@
-﻿/// <reference path="jquery/jquery-1.6.2-vsdoc.js" />
-/// <reference path="github.js" />
-/// <reference path="bages.js" />
-/// <reference path="info.js" />
-
-$(function () {
+﻿$(function () {
     var badges = [new Watcher(), new Follower(), new Celebrity(), new Contributor(), new Creator(), new Coder(), new Bureaucrat(), new Writer()];
 
     function startProgress(account) {
@@ -26,14 +21,14 @@ $(function () {
 
             var summary = {
                 toString: function () {
-                    return 'You have earned: '
-                        + (this['golden'] || 0) + ' golden, ' + (this['silver'] || 0) + ' silver, ' + (this['bronze'] || 0) + ' bronze and ' + (this['wooden'] || 0) + ' wooden badges';
+                    return 'You have earned: ' +
+                        (this['golden'] || 0) + ' golden, ' + (this['silver'] || 0) + ' silver, ' + (this['bronze'] || 0) + ' bronze and ' + (this['wooden'] || 0) + ' wooden badges';
                 }
             };
             var showNextBadge = function (current) {
                 if (current == context.badges.length) {
 
-                    if (current == 0) {
+                    if (current === 0) {
                         $('.badges').append('<span class="info">Your github activity is very low. You earned nothing, keep up good work!</span>');
                         return;
                     }
@@ -55,26 +50,26 @@ $(function () {
                 var $badge = $('<div class="badge"><div title="' + type + ' badge" class="body ' + type + '-outline"><h2>' + name + '</h2><p>' + info + '</p></div></div>').hide();
                 $('.badges').append($badge);
 
-                $badge.fadeIn('slow', function () { showNextBadge(++current) });
-            }
+                $badge.fadeIn('slow', function () { showNextBadge(++current); });
+            };
 
             $('.badges').show();
             showNextBadge(0);
-        }
+        };
 
         var collectSummary = function (summary, type) {
-            if (summary[type] == undefined) {
+            if (summary[type] === undefined) {
                 summary[type] = 0;
             }
 
             summary[type]++;
-        }
+        };
 
         var error = function () {
             $('#loading').hide();
             $('.badges').show();
             $('.badges').append('<span class="error">Sorry, but it looks like user with such account does not exists...</span>');
-        }
+        };
 
         location.hash = account;
         github.init(account, callback, error);
@@ -85,7 +80,7 @@ $(function () {
 
     $('button.submit').bind('click', function () {
         var account = $('#github-account').val().trim();
-        if (account != '') {
+        if (account !== '') {
             setTimeout(startProgress(account), 200);
         }
         event.preventDefault();
@@ -93,7 +88,7 @@ $(function () {
 
     $('#github-account').live('keyup', function (event) {
         var account = $('#github-account').val().trim();
-        if (account != '' && event.keyCode == 13) {
+        if (account !== '' && event.keyCode == 13) {
             setTimeout(startProgress(account), 200);
         }
         event.preventDefault();

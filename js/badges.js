@@ -14,7 +14,7 @@ Criteria.prototype = (function () {
         }
 
         return false;
-    }
+    };
 
     var init = function (type, info, options) {
         var property = options[type].propertyName;
@@ -24,27 +24,27 @@ Criteria.prototype = (function () {
         var format = options[type].format;
 
         return { badge: options.badge, value: propertyValue, format: format, low: low, high: high };
-    }
+    };
 
     var wooden = function (info, context, options) {
         var input = init('wooden', info, options);
         return criteria(input.badge, 'wooden', input.value, context, input.format, input.low, input.high);
-    }
+    };
 
     var bronze = function (info, context, options) {
         var input = init('bronze', info, options);
         return criteria(input.badge, 'bronze', input.value, context, input.format, input.low, input.high);
-    }
+    };
 
     var silver = function (info, context, options) {
         var input = init('silver', info, options);
         return criteria(input.badge, 'silver', input.value, context, input.format, input.low, input.high);
-    }
+    };
 
     var golden = function (info, context, options) {
         var input = init('golden', info, options);
         return criteria(input.badge, 'golden', input.value, context, input.format, input.low, input.high);
-    }
+    };
 
     return {
         applyForBadge: function (info, context, options) {
@@ -52,7 +52,7 @@ Criteria.prototype = (function () {
                 return !matcher(info, context, options);
             });
         }
-    }
+    };
 })();
 
 function Watcher() { }
@@ -65,7 +65,7 @@ Watcher.prototype = (function () {
 
             var format = function (watched) {
                 return 'Watching ' + watched + ' repositories';
-            }
+            };
 
             options.badge = 'Watcher';
             options['wooden'] = { propertyName: 'watchedRepositories', low: 5, high: 50, format: format };
@@ -75,7 +75,7 @@ Watcher.prototype = (function () {
 
             criteria.applyForBadge(info, context, options);
         }
-    }
+    };
 })();
 
 function Follower() { }
@@ -88,7 +88,7 @@ Follower.prototype = (function () {
 
             var format = function (following) {
                 return 'Following ' + following + ' repositories';
-            }
+            };
 
             options.badge = 'Follower';
 
@@ -99,7 +99,7 @@ Follower.prototype = (function () {
 
             criteria.applyForBadge(info, context, options);
         }
-    }
+    };
 })();
 
 function Celebrity() { }
@@ -112,7 +112,7 @@ Celebrity.prototype = (function () {
 
             var format = function (followed) {
                 return 'Followed by ' + followed + ' developers';
-            }
+            };
 
             options.badge = 'Celebrity';
 
@@ -123,7 +123,7 @@ Celebrity.prototype = (function () {
 
             criteria.applyForBadge(info, context, options);
         }
-    }
+    };
 })();
 
 function Contributor() { }
@@ -136,7 +136,7 @@ Contributor.prototype = (function () {
 
             var format = function (forked) {
                 return 'Forked ' + forked + ' repositories';
-            }
+            };
 
             options.badge = 'Contributor';
 
@@ -147,7 +147,7 @@ Contributor.prototype = (function () {
 
             criteria.applyForBadge(info, context, options);
         }
-    }
+    };
 })();
 
 function Creator() { }
@@ -160,7 +160,7 @@ Creator.prototype = (function () {
 
             var format = function (watchers) {
                 return 'Some repository watched by ' + watchers + ' developers';
-            }
+            };
 
             options.badge = 'Creator';
 
@@ -171,7 +171,7 @@ Creator.prototype = (function () {
 
             criteria.applyForBadge(info, context, options);
         }
-    }
+    };
 })();
 
 function Coder() { }
@@ -184,7 +184,7 @@ Coder.prototype = (function () {
 
             var format = function (repositories) {
                 return 'Have created ' + repositories + ' repositories';
-            }
+            };
 
             options.badge = 'Coder';
 
@@ -195,7 +195,7 @@ Coder.prototype = (function () {
 
             criteria.applyForBadge(info, context, options);
         }
-    }
+    };
 })();
 
 
@@ -209,7 +209,7 @@ Bureaucrat.prototype = (function () {
 
             var format = function (issues) {
                 return 'Some repository contains ' + issues + ' issues';
-            }
+            };
 
             options.badge = 'Bureaucrat';
 
@@ -219,7 +219,7 @@ Bureaucrat.prototype = (function () {
             options['golden'] = { propertyName: 'issues', low: 1000, format: format };
 
             criteria.applyForBadge(info, context, options);
-        }
+        };
     }
 })();
 
