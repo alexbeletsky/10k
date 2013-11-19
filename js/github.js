@@ -15,7 +15,7 @@ GitHub.prototype = (function () {
                 callback(r);
             },
             error: function (x, t, e) {
-                error(x, t, e);                
+                error(x, t, e);
             },
         });
     }
